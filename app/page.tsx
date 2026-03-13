@@ -2,25 +2,29 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-amber-50">
-      <h1 className="text-5xl font-bold text-green-700 mb-4">
+    <main className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-8">
+      {/* Branding */}
+      <h1 className="text-5xl font-extrabold mb-6 text-green-600 drop-shadow-lg">
         LomasOfertas
       </h1>
-      <p className="text-xl text-gray-700 mb-8">
-        Buscando el precio justo
+      <p className="mb-6 text-xl text-gray-700 italic">
+        Tu plataforma de oportunidades locales
       </p>
+
+      {/* Botones de roles */}
       <div className="flex gap-6">
-        <Link href="/comprador">
-          <button className="flex items-center gap-2 px-6 py-3 bg-green-500 text-white text-lg font-semibold rounded-lg shadow hover:bg-green-600">
-            🛒 Soy comprador
+        <Link href="/login?rol=comprador">
+          <button className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded shadow font-semibold">
+            Soy comprador
           </button>
         </Link>
-        <Link href="/vendedor">
-          <button className="flex items-center gap-2 px-6 py-3 bg-orange-500 text-white text-lg font-semibold rounded-lg shadow hover:bg-orange-600">
-            🏬 Soy vendedor
+
+        <Link href="/login?rol=vendedor">
+          <button className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded shadow font-semibold">
+            Soy vendedor
           </button>
         </Link>
       </div>
-    </div>
-  )
+    </main>
+  );
 }
